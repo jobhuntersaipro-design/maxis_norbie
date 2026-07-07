@@ -123,7 +123,7 @@ export default function HomePage() {
                     key={d.slug}
                     href={`/devices/${d.slug}`}
                     className={`group relative overflow-hidden rounded-card border border-on-inverse-variant/20 bg-surface shadow-lg transition-transform hover:-translate-y-1 ${
-                      i === 0 ? 'translate-y-3 hover:translate-y-2' : ''
+                      i === 0 ? 'lg:translate-y-3 lg:hover:translate-y-2' : ''
                     }`}
                   >
                     {d.fromMonthly ? (
@@ -167,9 +167,13 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="mt-xl grid gap-lg sm:grid-cols-2 lg:grid-cols-4">
-            {featured.map((device) => (
-              <DeviceCard key={device.slug} device={device} />
+          <div className="mt-xl grid grid-cols-3 gap-sm sm:gap-lg lg:grid-cols-4">
+            {featured.map((device, i) => (
+              <DeviceCard
+                key={device.slug}
+                device={device}
+                className={i === 3 ? 'hidden lg:flex' : ''}
+              />
             ))}
           </div>
 
