@@ -1,0 +1,61 @@
+/**
+ * Single source of truth for site identity (NAP), URLs and brand strings.
+ * Keep Name / Address / Phone consistent with the Google Business Profile
+ * and JSON-LD (project-overview §7 Local SEO).
+ */
+export const site = {
+  // Storefront brand. `brandName` is the display name across the UI.
+  brandName: 'Maxis Deals',
+  tagline: 'Maxis phones, plans & fibre — sorted over WhatsApp.',
+  description:
+    'The latest phones on Maxis postpaid plans, Maxis Home Fibre and Home 5G WiFi in Putra Heights & Petaling Jaya, Selangor. WhatsApp us to get set up today.',
+
+  // Update to the live domain before submitting the sitemap to Search Console.
+  url: 'https://www.maxisdeals.com.my',
+
+  // Sales agent
+  agentName: 'Sofie',
+
+  // TODO: confirm the real business email before launch.
+  email: 'hello@maxisdeals.com.my',
+
+  // NAP — must match Google Business Profile exactly
+  phoneDisplay: '+60 16-460 9428',
+  phoneE164: '+60164609428',
+  address: {
+    line: 'Putra Heights',
+    locality: 'Putra Heights',
+    region: 'Selangor',
+    postalCode: '47650',
+    country: 'MY',
+  },
+  serviceAreas: ['Putra Heights', 'Subang Jaya', 'Petaling Jaya', 'Selangor'],
+  hours: 'Mon–Sat, 10am–7pm',
+} as const
+
+export const nav = [
+  { href: '/devices', label: 'Devices' },
+  { href: '/postpaid', label: 'Postpaid' },
+  { href: '/home-fibre', label: 'Home Fibre' },
+  { href: '/home-wifi', label: 'Home WiFi' },
+] as const
+
+// Malaysian states/regions for the coverage-check form.
+export const malaysiaStates = [
+  'Selangor',
+  'Kuala Lumpur',
+  'Putrajaya',
+  'Johor',
+  'Melaka',
+  'Negeri Sembilan',
+  'Perak',
+  'Penang',
+  'Kedah',
+  'Perlis',
+  'Kelantan',
+  'Terengganu',
+  'Pahang',
+  'Sabah',
+  'Sarawak',
+  'Labuan',
+] as const

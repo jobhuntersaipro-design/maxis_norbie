@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_fill_form",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_evaluate",
+      "Bash(python3 -c \"print\\('A' * 128\\)\")",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' -X POST http://localhost:3000/api/auth/register -H 'Content-Type: application/json' -d '{\"name\":\"Test128\",\"email\":\"test128char@example.com\",\"password\":\"__TRACKED_VAR__\",\"confirmPassword\":\"__TRACKED_VAR__\"}')",
+      "Bash(python3 -c \"print\\('A' * 129\\)\")",
+      "Bash(curl -s -X POST http://localhost:3000/api/auth/register -H 'Content-Type: application/json' -d '{\"name\":\"Test129\",\"email\":\"test129char@example.com\",\"password\":\"__TRACKED_VAR__\",\"confirmPassword\":\"__TRACKED_VAR__\"}')",
+      "Bash(curl -s -X POST http://localhost:3000/api/auth/reset-password -H 'Content-Type: application/json' -d '{\"token\":\"faketoken123\",\"password\":\"__TRACKED_VAR__\",\"confirmPassword\":\"__TRACKED_VAR__\"}')",
+      "Bash(npx tsx -e ':*)",
+      "Bash(npx prisma:*)",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__neon__run_sql",
+      "Bash(npx tsx:*)",
+      "mcp__playwright__browser_wait_for",
+      "mcp__context7__query-docs",
+      "mcp__neon__list_projects",
+      "mcp__neon__describe_project",
+      "mcp__neon__list_branch_computes",
+      "mcp__playwright__browser_select_option",
+      "mcp__playwright__browser_file_upload",
+      "mcp__neon__run_sql_transaction",
+      "Bash(node -e ':*)",
+      "Bash(node -e \"console.log\\(JSON.parse\\(require\\('fs'\\).readFileSync\\('/dev/stdin','utf8'\\)\\).length\\)\")"
+    ]
+  }
+}

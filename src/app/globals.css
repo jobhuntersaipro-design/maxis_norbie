@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+/*
+  Maxis Authorized Reseller — design tokens.
+  Brand-aligned but clearly a reseller (see project-overview §1, §10).
+  Rule: components use the NAMED token (bg-surface, text-on-surface, px-lg),
+  never a raw hex or numeric utility.
+*/
+
+@theme {
+  /* ---- Brand ---------------------------------------------------------- */
+  --color-maxis-green: #8dc63f;        /* Maxis Shock Green, Pantone 375 */
+  --color-maxis-green-soft: #b6dd82;   /* lighter tint for washes */
+  --color-maxis-green-strong: #5f8f1f; /* accessible green for text/links on white */
+  --color-maxis-blue: #002391;         /* Maxis wordmark blue */
+  --color-maxis-blue-soft: #33509f;
+
+  /* ---- Surfaces ------------------------------------------------------- */
+  --color-surface: #ffffff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f6f8f1;   /* faint green-tinted panel */
+  --color-surface-container: #eef2e4;
+  --color-surface-container-high: #e5ebd6;
+  --color-surface-dim: #d9dfca;
+  --color-surface-inverse: #0e3a22;         /* Maxis forest green (brand dark panel) */
+  --color-surface-inverse-high: #14512f;
+  --color-surface-brand: #8dc63f;           /* Shock Green band (primary, most apparent) */
+
+  /* ---- Text ----------------------------------------------------------- */
+  --color-on-surface: #191c15;
+  --color-on-surface-variant: #4a4f43;
+  --color-on-surface-faint: #6c7362;
+  --color-on-inverse: #f4f7ee;
+  --color-on-inverse-variant: #c3cbb4;
+
+  /* ---- Roles ---------------------------------------------------------- */
+  --color-primary: #002391;             /* primary buttons: blue + white text */
+  --color-primary-hover: #001c74;
+  --color-on-primary: #ffffff;
+  --color-accent: #8dc63f;              /* accent fills / squiggle / badges */
+  --color-on-accent: #191c15;           /* dark text on green (passes AA) */
+  --color-whatsapp: #25d366;
+  --color-whatsapp-hover: #1fb959;
+
+  /* ---- Lines ---------------------------------------------------------- */
+  --color-outline: #cdd3bf;
+  --color-outline-variant: #e4e8d8;
+
+  /* ---- Spacing scale (named tokens) ----------------------------------- */
+  --spacing-xs: 0.25rem;   /* 4  */
+  --spacing-sm: 0.5rem;    /* 8  */
+  --spacing-md: 1rem;      /* 16 */
+  --spacing-lg: 1.5rem;    /* 24 */
+  --spacing-xl: 2rem;      /* 32 */
+  --spacing-2xl: 3rem;     /* 48 */
+  --spacing-3xl: 4.5rem;   /* 72 */
+  --spacing-4xl: 6rem;     /* 96 */
+
+  /* ---- Radius --------------------------------------------------------- */
+  --radius-card: 1.25rem;
+  --radius-pill: 9999px;
+
+  /* ---- Type ----------------------------------------------------------- */
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* ---- Container ------------------------------------------------------ */
+  --breakpoint-3xl: 96rem;
+
+  /*
+    Text-measure max-widths. Named uniquely so they do NOT collide with the
+    spacing scale above — in Tailwind v4 a `--spacing-2xl` token would shadow
+    the default `max-w-2xl` container width, so we use `max-w-measure*` instead.
+  */
+  --container-mini: 20rem;        /* max-w-mini */
+  --container-measure-sm: 36rem;  /* max-w-measure-sm */
+  --container-measure: 42rem;     /* max-w-measure */
+  --container-measure-lg: 48rem;  /* max-w-measure-lg */
+}
+
+/* Base ---------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Consistent focus ring for keyboard users */
+:where(a, button, input, textarea, select):focus-visible {
+  outline: 2px solid var(--color-maxis-blue);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Reusable squiggle-underline accent for headings */
+.squiggle-accent {
+  position: relative;
+  display: inline-block;
+}
+.squiggle-accent::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.35em;
+  height: 0.5em;
+  background-image: url("/brand/squiggle-green.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.9;
+}
