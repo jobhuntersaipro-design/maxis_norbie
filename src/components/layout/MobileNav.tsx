@@ -9,13 +9,13 @@ export function MobileNav() {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="lg:hidden">
+    <div className="md:hidden">
       <button
         type="button"
         aria-expanded={open}
         aria-label={open ? 'Close menu' : 'Open menu'}
         onClick={() => setOpen((v) => !v)}
-        className="inline-flex h-10 w-10 items-center justify-center rounded-pill text-on-surface hover:bg-surface-container-low focus-visible:outline-2 focus-visible:outline-maxis-blue"
+        className="inline-flex h-11 w-11 items-center justify-center rounded-pill text-on-surface hover:bg-surface-container-low focus-visible:outline-2 focus-visible:outline-maxis-blue"
       >
         <svg
           viewBox="0 0 24 24"

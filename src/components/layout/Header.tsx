@@ -17,7 +17,7 @@ export function Header() {
           <BrandLogo />
         </Link>
 
-        <nav className="hidden items-center gap-xs lg:flex">
+        <nav className="hidden items-center gap-xs md:flex">
           {nav.map((item) => (
             <a
               key={item.href}
@@ -30,12 +30,11 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-sm">
-          <WhatsAppButton
-            message={waMessages.general}
-            className="hidden sm:inline-flex"
-          >
-            WhatsApp us
-          </WhatsAppButton>
+          <span className="hidden sm:inline-flex">
+            <WhatsAppButton message={waMessages.general}>
+              WhatsApp us
+            </WhatsAppButton>
+          </span>
           <MobileNav />
         </div>
       </div>

@@ -58,7 +58,7 @@ export function CoverageChecker() {
                 type="button"
                 onClick={() => setDwelling(d)}
                 aria-pressed={dwelling === d}
-                className={`flex-1 rounded-card border px-md py-sm text-sm font-semibold transition-colors sm:flex-none sm:px-xl ${
+                className={`flex-1 rounded-card border px-md py-md text-sm font-semibold transition-colors sm:flex-none sm:px-xl ${
                   dwelling === d
                     ? 'border-maxis-green bg-accent text-on-accent'
                     : 'border-outline bg-surface text-on-surface-variant hover:bg-surface-container-low'

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { buildMetadata } from '@/lib/metadata'
 import { site } from '@/lib/site'
 import { waMessages } from '@/lib/whatsapp'
@@ -193,8 +194,7 @@ export default function HomePage() {
               </h1>
               <p className="mt-lg max-w-measure-sm text-lg text-on-inverse-variant">
                 Unlimited Maxis Home Fibre from RM89/mth, with a free WiFi 6
-                router and free installation. Message {site.agentName} and
-                we&rsquo;ll check coverage and sort your sign-up.
+                router and free installation.
               </p>
 
               <div className="mt-xl flex flex-col gap-sm sm:flex-row">
@@ -233,19 +233,30 @@ export default function HomePage() {
             <div className="relative">
               <a
                 href="#ipad"
-                className="group block overflow-hidden rounded-card bg-surface p-lg shadow-lg transition-transform hover:-translate-y-1 sm:p-xl"
+                className="group relative block overflow-hidden rounded-card bg-surface p-lg shadow-lg transition-transform hover:-translate-y-1 sm:p-xl"
               >
-                <span className="inline-flex rounded-pill bg-accent px-md py-xs text-xs font-bold uppercase tracking-wide text-on-accent">
-                  Limited-time offer
-                </span>
-                <p className="mt-md text-2xl font-extrabold leading-tight text-on-surface sm:text-3xl">
-                  300Mbps fibre + an Apple iPad for{' '}
-                  <span className="text-maxis-green-strong">RM1/mth</span>
-                </p>
-                <p className="mt-sm text-on-surface-variant">
-                  Switch to Maxis Home Fibre 300Mbps and get an 11-inch iPad
-                  (128GB, worth RM1,599) on Home Zerolution.
-                </p>
+                <div className="flex items-start gap-md">
+                  <div className="min-w-0 flex-1">
+                    <span className="inline-flex rounded-pill bg-accent px-md py-xs text-xs font-bold uppercase tracking-wide text-on-accent">
+                      Limited-time offer
+                    </span>
+                    <p className="mt-md text-2xl font-extrabold leading-tight text-on-surface sm:text-3xl">
+                      300Mbps fibre + an Apple iPad for{' '}
+                      <span className="text-maxis-green-strong">RM1/mth</span>
+                    </p>
+                    <p className="mt-sm text-on-surface-variant">
+                      Get an 11-inch iPad (128GB, worth RM1,599) on Home
+                      Zerolution.
+                    </p>
+                  </div>
+                  <Image
+                    src="/promo/ipad.webp"
+                    alt="Apple 11-inch iPad free with Maxis Home Fibre 300Mbps"
+                    width={110}
+                    height={150}
+                    className="hidden h-32 w-auto shrink-0 drop-shadow-lg sm:block"
+                  />
+                </div>
                 <span className="mt-lg inline-flex items-center gap-xs font-semibold text-maxis-green-strong">
                   See the offer
                   <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -305,17 +316,32 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <div className="rounded-card bg-surface-inverse p-xl text-center text-on-inverse">
-                <p className="text-sm font-semibold uppercase tracking-wide text-on-inverse-variant">
-                  Apple 11-inch iPad
+              <div className="relative overflow-hidden rounded-card bg-surface-inverse p-lg text-center text-on-inverse">
+                <Squiggle
+                  tone="green"
+                  className="pointer-events-none absolute -right-6 -top-6 h-28 w-28 opacity-15"
+                />
+                <p className="relative text-sm font-semibold uppercase tracking-wide text-on-inverse-variant">
+                  Apple 11-inch iPad · 128GB
                 </p>
-                <p className="mt-sm text-6xl font-extrabold tracking-tight text-accent">
-                  RM1
-                </p>
-                <p className="text-sm text-on-inverse-variant">
-                  /mth &times; 36 months
-                </p>
-                <div className="mt-lg border-t border-on-inverse-variant/20 pt-lg">
+                <div className="relative mx-auto mt-md flex items-center justify-center gap-md">
+                  <Image
+                    src="/promo/ipad.webp"
+                    alt="Apple 11-inch iPad (128GB) — free with Maxis Home Fibre 300Mbps"
+                    width={140}
+                    height={190}
+                    className="h-40 w-auto drop-shadow-lg"
+                  />
+                  <div className="text-left">
+                    <p className="text-5xl font-extrabold leading-none tracking-tight text-accent">
+                      RM1
+                    </p>
+                    <p className="mt-xs text-sm text-on-inverse-variant">
+                      /mth &times; 36 months
+                    </p>
+                  </div>
+                </div>
+                <div className="relative mt-lg border-t border-on-inverse-variant/20 pt-md">
                   <p className="text-sm text-on-inverse-variant">
                     with Home Fibre 300Mbps
                   </p>
@@ -337,7 +363,7 @@ export default function HomePage() {
             title="Choose your speed"
             description="New sign-up prices — the usual price struck through. Not sure which speed? Tell us how many people and devices are online at once and we'll recommend one."
           />
-          <div className="mt-xl grid items-start gap-lg sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-xl grid gap-lg sm:grid-cols-2 lg:grid-cols-3">
             {plans.map((plan) => (
               <PlanCard key={plan.name} plan={plan} />
             ))}
