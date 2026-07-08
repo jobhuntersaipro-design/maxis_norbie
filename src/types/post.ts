@@ -7,6 +7,7 @@ export type PostBlock =
 export interface Post {
   slug: string
   title: string // used as <h1>
+  image: string // /blog/<slug>.jpg (16:9, in /public)
   excerpt: string
   date: string // ISO date
   readMins: number

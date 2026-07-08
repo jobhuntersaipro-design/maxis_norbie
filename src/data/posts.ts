@@ -7,6 +7,7 @@ import type { Post } from '@/types/post'
 export const posts: Post[] = [
   {
     slug: 'why-is-my-internet-slow-at-home',
+    image: '/blog/why-is-my-internet-slow-at-home.jpg',
     title: 'Why Is My Internet So Slow at Home? 9 Ways to Fix It',
     excerpt:
       'Buffering, lag and endless loading? Here are the most common reasons your home internet is slow — and how to fix each one, from router placement to upgrading your line.',
@@ -94,6 +95,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'wifi-coverage-weak-in-some-rooms',
+    image: '/blog/wifi-coverage-weak-in-some-rooms.jpg',
     title: 'WiFi Weak in Some Rooms? How Coverage Affects Your Speed',
     excerpt:
       'Fast internet near the router but weak upstairs or in the bedroom? Here’s how WiFi coverage works, what causes dead zones, and how mesh WiFi fixes it.',
@@ -162,6 +164,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'home-fibre-vs-home-wifi',
+    image: '/blog/home-fibre-vs-home-wifi.jpg',
     title: 'Home Fibre vs Home 5G WiFi: Which Is Right for You?',
     excerpt:
       'Fixed fibre or wireless 5G home internet? We compare speed, reliability, installation and price so you can choose the right home broadband.',

@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 import { posts, getPost } from '@/data/posts'
 import type { PostBlock } from '@/types/post'
 import { buildMetadata } from '@/lib/metadata'
 import { articleLd, breadcrumbLd } from '@/lib/schema'
 import { Container } from '@/components/ui/Container'
 import { PostCard } from '@/components/blog/PostCard'
-import { WhatsAppButton } from '@/components/ui/WhatsAppButton'
+import { FibreCtaBand } from '@/components/sections/FibreCtaBand'
 import { CtaBand } from '@/components/sections/CtaBand'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { CheckIcon } from '@/components/ui/icons'
@@ -29,6 +30,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     title: post.seoTitle,
     description: post.seoDescription,
     path: `/blog/${post.slug}`,
+    image: post.image,
   })
 }
 
@@ -117,7 +119,7 @@ export default async function BlogPostPage({ params }: Params) {
 
         <header className="py-xl">
           <Container>
-            <div className="max-w-measure-lg">
+            <div>
               <p className="text-sm font-semibold uppercase tracking-wide text-maxis-green-strong">
                 {post.category}
               </p>
@@ -132,30 +134,27 @@ export default async function BlogPostPage({ params }: Params) {
         </header>
 
         <Container>
-          <div className="max-w-measure-lg pb-2xl">
+          <div className="relative mb-xl aspect-16/9 overflow-hidden rounded-card bg-surface-container-low sm:aspect-[8/3]">
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              sizes="(max-width: 1152px) 100vw, 1152px"
+              className="object-cover"
+              priority
+            />
+          </div>
+        </Container>
+
+        <Container>
+          <div className="pb-2xl">
             {post.blocks.map((block, i) => (
               <Block key={i} block={block} />
             ))}
-
-            <div className="mt-2xl rounded-card bg-surface-container-low p-lg sm:p-xl">
-              <h2 className="text-xl font-bold text-on-surface">
-                Get faster Home Fibre
-              </h2>
-              <p className="mt-sm text-on-surface-variant">
-                Maxis Home Fibre from RM89/mth with a free WiFi 6 router, free
-                installation and unlimited internet. We&rsquo;ll check coverage
-                at your address.
-              </p>
-              <WhatsAppButton
-                message={waMessages.homeFibre}
-                size="lg"
-                className="mt-lg"
-              >
-                Check coverage on WhatsApp
-              </WhatsAppButton>
-            </div>
           </div>
         </Container>
+
+        <FibreCtaBand />
       </article>
 
       {related.length > 0 && (

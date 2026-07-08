@@ -33,6 +33,14 @@ Build the initial Maxis Authorized Reseller marketing website (v1) per
 
 > Sorted from latest to earliest.
 
+- 2026-07-08 (blog imagery) — Added real **Unsplash photos** (Unsplash License,
+  free/commercial, no attribution required) for the 3 guides — bundled in
+  `/public/blog/<slug>.jpg` (16:9). Used as PostCard thumbnails + post hero +
+  OG/Article-schema `image`. Widened blog post **text to full container width**
+  (was a narrow measure); hero shortened ~25% (`sm:aspect-[8/3]`). Extracted the
+  full-width "Get faster Home Fibre" CTA into `FibreCtaBand`.
+  Note: swap photos anytime by replacing the files in `/public/blog/`.
+
 - 2026-07-08 (mobile polish) — Carousel + mobile refinements:
   - Plans carousel: added **dot indicators**, fixed clipped badges (more track
     padding), **page-based scrolling** capped at 3 pages (dots: 2 desktop /

@@ -25,6 +25,7 @@ export function articleLd(post: Post): Record<string, unknown> {
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.seoDescription,
+    image: `${site.url}${post.image}`,
     datePublished: post.date,
     dateModified: post.date,
     author: { '@type': 'Organization', name: site.brandName },
