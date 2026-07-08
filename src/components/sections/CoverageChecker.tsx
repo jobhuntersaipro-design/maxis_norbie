@@ -5,14 +5,7 @@ import { waLink } from '@/lib/whatsapp'
 import { malaysiaStates, site } from '@/lib/site'
 import { WhatsAppIcon, PinIcon } from '@/components/ui/icons'
 
-type Service = 'Home Fibre' | 'Home 5G WiFi' | 'Not sure — recommend for me'
 type Dwelling = 'High-rise' | 'Landed'
-
-const services: Service[] = [
-  'Home Fibre',
-  'Home 5G WiFi',
-  'Not sure — recommend for me',
-]
 
 const inputClass =
   'w-full rounded-card border border-outline bg-surface px-md py-sm text-on-surface placeholder:text-on-surface-faint focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-maxis-blue'
@@ -23,7 +16,6 @@ const labelClass = 'mb-xs block text-sm font-semibold text-on-surface'
  * pre-filled enquiry so Sofie can check Maxis Fibre / 5G availability. No backend.
  */
 export function CoverageChecker() {
-  const [service, setService] = useState<Service>('Home Fibre')
   const [dwelling, setDwelling] = useState<Dwelling>('High-rise')
   const [unit, setUnit] = useState('')
   const [address, setAddress] = useState('')
@@ -33,8 +25,7 @@ export function CoverageChecker() {
   const ready = address.trim().length > 3 && /^\d{4,5}$/.test(postcode.trim())
 
   const message = [
-    `Hi ${site.agentName}, please check Maxis coverage for my address:`,
-    `• Service: ${service}`,
+    `Hi ${site.agentName}, please check Maxis Home Fibre coverage for my address:`,
     `• Property: ${dwelling}`,
     address.trim() && `• Address: ${address.trim()}${unit.trim() ? `, Unit ${unit.trim()}` : ''}`,
     postcode.trim() && `• Postcode: ${postcode.trim()}`,
@@ -51,34 +42,12 @@ export function CoverageChecker() {
           Check your coverage
         </h3>
         <p className="mt-xs text-sm text-on-surface-variant">
-          Tell us where you are and we&rsquo;ll confirm Maxis Home Fibre &amp; 5G
+          Tell us where you are and we&rsquo;ll confirm Maxis Home Fibre
           availability at your address over WhatsApp.
         </p>
       </div>
 
       <div className="grid gap-lg p-lg sm:p-xl">
-        {/* Service */}
-        <div>
-          <span className={labelClass}>What are you after?</span>
-          <div className="flex flex-wrap gap-sm">
-            {services.map((s) => (
-              <button
-                key={s}
-                type="button"
-                onClick={() => setService(s)}
-                aria-pressed={service === s}
-                className={`rounded-pill border px-md py-sm text-sm font-semibold transition-colors ${
-                  service === s
-                    ? 'border-maxis-green bg-accent text-on-accent'
-                    : 'border-outline bg-surface text-on-surface-variant hover:bg-surface-container-low'
-                }`}
-              >
-                {s}
-              </button>
-            ))}
-          </div>
-        </div>
-
         {/* Dwelling */}
         <div>
           <span className={labelClass}>Property type</span>

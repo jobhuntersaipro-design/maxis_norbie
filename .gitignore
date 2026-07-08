@@ -26,3 +26,6 @@ next-env.d.ts
 
 # Confidential source material (Maxis internal decks) — do not commit
 *.pdf
+
+# Confidential promo materials (Maxis Confidential) — do not commit
+materials/

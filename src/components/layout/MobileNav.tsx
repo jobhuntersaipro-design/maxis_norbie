@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
 import { nav } from '@/lib/site'
 import { waMessages } from '@/lib/whatsapp'
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton'
@@ -39,14 +38,14 @@ export function MobileNav() {
         <div className="absolute inset-x-0 top-full border-b border-outline-variant bg-surface shadow-lg">
           <nav className="mx-auto flex max-w-6xl flex-col gap-xs px-md py-md">
             {nav.map((item) => (
-              <Link
+              <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
                 className="rounded-card px-md py-sm text-base font-semibold text-on-surface hover:bg-surface-container-low"
               >
                 {item.label}
-              </Link>
+              </a>
             ))}
             <WhatsAppButton
               message={waMessages.general}

@@ -9,18 +9,12 @@ export function waLink(message: string): string {
 
 /**
  * Standard pre-filled messages, kept in one place so copy stays consistent.
- * Device pages pass the device's own `whatsappMessage`.
  */
 export const waMessages = {
-  general: `Hi ${site.agentName}, I'd like some help choosing a Maxis phone or plan.`,
-  moreDevices:
-    "Hi, I'm looking for a device that's not listed on your site — can you help?",
-  postpaid:
-    "Hi, I'd like to switch to / sign up for a Maxis Postpaid plan. What are my options?",
+  general: `Hi ${site.agentName}, I'd like to know more about Maxis Home Fibre.`,
   homeFibre:
-    "Hi, I'm interested in Maxis Home Fibre. What plans are available in my area?",
-  homeWifi:
-    "Hi, I'm interested in Maxis Home 5G WiFi. Is it available at my address?",
-  coverage:
-    "Hi, can you check Maxis Home Fibre / 5G coverage for my address?",
+    "Hi, I'm interested in Maxis Home Fibre. What plans are available at my address?",
+  coverage: 'Hi, can you check Maxis Home Fibre coverage for my address?',
+  ipad:
+    "Hi, I'm interested in the Maxis Home Fibre 300Mbps + iPad for RM1/mth offer. Am I eligible?",
 } as const

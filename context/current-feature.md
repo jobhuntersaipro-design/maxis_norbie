@@ -33,6 +33,24 @@ Build the initial Maxis Authorized Reseller marketing website (v1) per
 
 > Sorted from latest to earliest.
 
+- 2026-07-08 — **Pivot to Home-Fibre-only business.** Removed all phones,
+  postpaid and 5G-WiFi pages/data/components (devices, [slug], postpaid,
+  home-wifi, home-fibre, devices.ts, DeviceCard, PriceTag, TrustStrip, format.ts,
+  productLd, device images). Site is now a **single-page** Home Fibre landing
+  (`/`) with anchor nav (Plans / iPad Offer / Coverage / FAQ). Content from
+  `materials/`:
+  - Plans (new sign-up "from" prices, RRP struck): 100M RM89, 300M RM99/139,
+    500M RM129/159, 1G RM159/249, 2G RM319 (+3 mths free). Full rebate table NOT
+    published (reseller rule). ⚠️ Re-verify vs reseller portal — prices vary by
+    infra (HSBA/Allo/CTS/Sacofa/NGBB) and Transfer vs non-Transfer.
+  - Featured **iPad promo**: Home Fibre 300Mbps 36-mth @ RM139 + Apple 11" iPad
+    128GB (RRP RM1,599) on Home Zerolution for RM1/mth (DAP waived), switchover
+    customers, while stocks last. Deliberately shown without a hard expiry date
+    (materials list 30 Jun 2026 which is past; framed as "limited / while stocks
+    last" — confirm current validity).
+  - FAQPage JSON-LD added; sitemap reduced to `/`; metadata retargeted to
+    "Maxis Home Fibre in Selangor".
+
 - 2026-07-07 (pm) — Client revisions:
   - Rebrand: removed all "Authorized Reseller" labelling and the "Kim Brothers
     Enterprise" company name. Storefront now presents as **"Maxis Deals"**

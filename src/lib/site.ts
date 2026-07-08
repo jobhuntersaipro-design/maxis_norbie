@@ -6,9 +6,9 @@
 export const site = {
   // Storefront brand. `brandName` is the display name across the UI.
   brandName: 'Maxis Deals',
-  tagline: 'Maxis phones, plans & fibre — sorted over WhatsApp.',
+  tagline: 'Superfast Maxis Home Fibre — sorted over WhatsApp.',
   description:
-    'The latest phones on Maxis postpaid plans, Maxis Home Fibre and Home 5G WiFi in Putra Heights & Petaling Jaya, Selangor. WhatsApp us to get set up today.',
+    'Superfast Maxis Home Fibre in Putra Heights & Petaling Jaya, Selangor. Plans from RM89/mth with a free WiFi 6 router, free installation and unlimited internet. WhatsApp us to check coverage.',
 
   // Update to the live domain before submitting the sitemap to Search Console.
   url: 'https://www.maxisdeals.com.my',
@@ -33,11 +33,12 @@ export const site = {
   hours: 'Mon–Sat, 10am–7pm',
 } as const
 
+// Single-page site — in-page anchor navigation.
 export const nav = [
-  { href: '/devices', label: 'Devices' },
-  { href: '/postpaid', label: 'Postpaid' },
-  { href: '/home-fibre', label: 'Home Fibre' },
-  { href: '/home-wifi', label: 'Home WiFi' },
+  { href: '#plans', label: 'Plans' },
+  { href: '#ipad', label: 'iPad Offer' },
+  { href: '#coverage', label: 'Coverage' },
+  { href: '#faq', label: 'FAQ' },
 ] as const
 
 // Malaysian states/regions for the coverage-check form.
