@@ -5,6 +5,7 @@ import { site } from '@/lib/site'
 import { localBusinessLd } from '@/lib/schema'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import { FloatingWhatsApp } from '@/components/layout/FloatingWhatsApp'
 import { JsonLd } from '@/components/seo/JsonLd'
 
 // Manrope: a clean, modern, humanist-geometric sans — a licensed-free stand-in
@@ -56,6 +57,7 @@ export default function RootLayout({
         <main id="main" className="flex-1">
           {children}
         </main>
+        <FloatingWhatsApp />
         <Footer />
       </body>
     </html>

@@ -212,8 +212,8 @@ export const posts: Post[] = [
       {
         type: 'ul',
         items: [
-          'Choose Home Fibre for the most stable, high-speed connection for a busy household',
-          'Choose Home 5G WiFi if fibre isn’t available yet, or you need internet fast with no installation',
+          'Home Fibre is the best choice for a stable, high-speed connection in a busy household',
+          'Wireless 5G home internet can be a stop-gap if fibre isn’t available at your address yet',
         ],
       },
       { type: 'h2', text: 'Our recommendation' },

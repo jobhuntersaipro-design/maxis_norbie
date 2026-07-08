@@ -13,9 +13,6 @@ export const site = {
   // Update to the live domain before submitting the sitemap to Search Console.
   url: 'https://www.maxisdeals.com.my',
 
-  // Sales agent
-  agentName: 'Sofie',
-
   // TODO: confirm the real business email before launch.
   email: 'hello@maxisdeals.com.my',
 

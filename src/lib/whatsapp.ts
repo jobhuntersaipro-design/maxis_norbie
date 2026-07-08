@@ -1,6 +1,4 @@
-import { site } from './site'
-
-const WHATSAPP_NUMBER = '60164609428' // reseller sales number (Sofie)
+const WHATSAPP_NUMBER = '60164609428' // sales WhatsApp number
 
 /** Build a wa.me deep link with a pre-filled message. */
 export function waLink(message: string): string {
@@ -11,7 +9,7 @@ export function waLink(message: string): string {
  * Standard pre-filled messages, kept in one place so copy stays consistent.
  */
 export const waMessages = {
-  general: `Hi ${site.agentName}, I'd like to know more about Maxis Home Fibre.`,
+  general: "Hi, I'm interested in a Maxis Home Fibre plan. Can you help me?",
   homeFibre:
     "Hi, I'm interested in Maxis Home Fibre. What plans are available at my address?",
   coverage: 'Hi, can you check Maxis Home Fibre coverage for my address?',

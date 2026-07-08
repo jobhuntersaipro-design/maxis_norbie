@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { waLink } from '@/lib/whatsapp'
-import { malaysiaStates, site } from '@/lib/site'
+import { malaysiaStates } from '@/lib/site'
 import { WhatsAppIcon, PinIcon } from '@/components/ui/icons'
 
 type Dwelling = 'High-rise' | 'Landed'
@@ -13,7 +13,7 @@ const labelClass = 'mb-xs block text-sm font-semibold text-on-surface'
 
 /**
  * Static-site coverage checker: gathers the address and opens WhatsApp with a
- * pre-filled enquiry so Sofie can check Maxis Fibre / 5G availability. No backend.
+ * pre-filled enquiry so we can check Maxis Home Fibre availability. No backend.
  */
 export function CoverageChecker() {
   const [dwelling, setDwelling] = useState<Dwelling>('High-rise')
@@ -25,7 +25,7 @@ export function CoverageChecker() {
   const ready = address.trim().length > 3 && /^\d{4,5}$/.test(postcode.trim())
 
   const message = [
-    `Hi ${site.agentName}, please check Maxis Home Fibre coverage for my address:`,
+    'Hi, please check Maxis Home Fibre coverage for my address:',
     `• Property: ${dwelling}`,
     address.trim() && `• Address: ${address.trim()}${unit.trim() ? `, Unit ${unit.trim()}` : ''}`,
     postcode.trim() && `• Postcode: ${postcode.trim()}`,

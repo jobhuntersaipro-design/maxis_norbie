@@ -17,10 +17,14 @@ export function buildMetadata({
   title,
   description,
   path,
-  image = '/brand/og-default.svg',
+  image = '/og.png',
 }: PageMetaInput): Metadata {
   const url = `${site.url}${path}`
-  const imageUrl = image.startsWith('http') ? image : `${site.url}${image}`
+  // Social platforms don't render SVG OG images — fall back to the branded PNG.
+  const safeImage = /\.(png|jpe?g|webp)$/i.test(image) ? image : '/og.png'
+  const imageUrl = safeImage.startsWith('http')
+    ? safeImage
+    : `${site.url}${safeImage}`
 
   return {
     // `absolute` bypasses the root layout's title template — pages pass a

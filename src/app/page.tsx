@@ -203,7 +203,7 @@ export default function HomePage() {
                   size="lg"
                   className="w-full sm:w-auto"
                 >
-                  Chat with {site.agentName}
+                  Chat with us
                 </WhatsAppButton>
                 <LinkButton
                   href="#plans"
@@ -479,7 +479,7 @@ export default function HomePage() {
               },
               {
                 title: 'One person, start to finish',
-                body: `Deal directly with ${site.agentName} on WhatsApp. Real answers, fast.`,
+                body: 'Deal directly with us on WhatsApp. Real answers, fast.',
               },
               {
                 title: 'Best price, checked for you',

@@ -29,7 +29,7 @@ export function Footer() {
                 className="flex items-center gap-sm text-on-inverse hover:text-accent"
               >
                 <WhatsAppIcon className="h-4 w-4 shrink-0" />
-                Chat with {site.agentName}
+                Chat with us
               </a>
               <a
                 href={`mailto:${site.email}`}

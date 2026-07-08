@@ -1,7 +1,6 @@
 import { Container } from '@/components/ui/Container'
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton'
 import { Squiggle } from '@/components/ui/Squiggle'
-import { site } from '@/lib/site'
 
 interface CtaBandProps {
   title?: string
@@ -12,9 +11,9 @@ interface CtaBandProps {
 
 export function CtaBand({
   title = 'Ready when you are.',
-  description = `Tell ${site.agentName} what you need. Straight answers, no hard sell.`,
+  description = 'Tell us what you need. Straight answers, no hard sell.',
   message,
-  buttonLabel = `Chat with ${site.agentName}`,
+  buttonLabel = 'Chat with us',
 }: CtaBandProps) {
   return (
     <section className="py-2xl">

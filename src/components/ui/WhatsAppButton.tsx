@@ -24,7 +24,7 @@ interface WhatsAppButtonProps {
 
 /**
  * The primary conversion action across the whole site — a real crawlable
- * <a href> that opens WhatsApp (Sofie) with a pre-filled message.
+ * <a href> that opens WhatsApp with a pre-filled message.
  */
 export function WhatsAppButton({
   message,
