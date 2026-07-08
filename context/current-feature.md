@@ -33,6 +33,25 @@ Build the initial Maxis Authorized Reseller marketing website (v1) per
 
 > Sorted from latest to earliest.
 
+- 2026-07-08 (later) — Content + UX pass:
+  - Added iPad promo image (`/public/promo/ipad.webp`) to hero teaser + RM1 offer.
+  - Removed **all area mentions** (Putra Heights / PJ / Selangor) from copy,
+    metadata, hero eyebrow, footer; schema switched to Organization +
+    areaServed Malaysia (no local postal address). Coverage form state now
+    defaults to "Select state".
+  - Plans are a **horizontal carousel** (`PlansCarousel` client component): `< >`
+    arrow controls, hidden scrollbar, snap, wider card peek, native touch swipe +
+    mouse drag-to-scroll.
+  - Hover effects on arrows, plan/included/why-us/post cards.
+  - **Blog** (SEO): `/blog` index + 3 posts (`/blog/[slug]`): slow-internet fixes,
+    WiFi coverage/dead zones, fibre vs 5G WiFi. Keyword-targeted; BlogPosting +
+    Breadcrumb JSON-LD; content is original (topics inspired by Maxis discovery
+    articles the client shared).
+  - New **`/coverage`** page (coverage checker stays on home too).
+  - Nav: Plans · iPad Offer · Coverage · Guides (on-home anchors use `/#…`).
+  - UI review (ui-reviewer agent) fixes: even plan-card heights, header nav at
+    `md`, larger tap targets, header WhatsApp now actually hides < sm.
+
 - 2026-07-08 — **Pivot to Home-Fibre-only business.** Removed all phones,
   postpaid and 5G-WiFi pages/data/components (devices, [slug], postpaid,
   home-wifi, home-fibre, devices.ts, DeviceCard, PriceTag, TrustStrip, format.ts,

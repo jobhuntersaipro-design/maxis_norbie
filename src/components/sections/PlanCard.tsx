@@ -19,7 +19,7 @@ export interface Plan {
 export function PlanCard({ plan }: { plan: Plan }) {
   return (
     <div
-      className={`relative flex flex-col rounded-card border p-lg sm:p-xl ${
+      className={`relative flex h-full flex-col rounded-card border p-lg sm:p-xl ${
         plan.featured
           ? 'border-maxis-green bg-surface shadow-lg ring-1 ring-maxis-green'
           : 'border-outline-variant bg-surface'

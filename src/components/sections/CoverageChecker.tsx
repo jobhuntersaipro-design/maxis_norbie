@@ -20,7 +20,7 @@ export function CoverageChecker() {
   const [unit, setUnit] = useState('')
   const [address, setAddress] = useState('')
   const [postcode, setPostcode] = useState('')
-  const [state, setState] = useState<string>('Selangor')
+  const [state, setState] = useState<string>('')
 
   const ready = address.trim().length > 3 && /^\d{4,5}$/.test(postcode.trim())
 
@@ -79,7 +79,7 @@ export function CoverageChecker() {
             <input
               id="cov-address"
               className={inputClass}
-              placeholder="e.g. Jalan Putra Perdana 2, Putra Heights"
+              placeholder="e.g. 12, Jalan Mawar 3, Taman Sri Indah"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
               autoComplete="street-address"
@@ -125,6 +125,7 @@ export function CoverageChecker() {
               value={state}
               onChange={(e) => setState(e.target.value)}
             >
+              <option value="">Select state</option>
               {malaysiaStates.map((s) => (
                 <option key={s} value={s}>
                   {s}

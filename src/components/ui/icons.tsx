@@ -25,6 +25,40 @@ export function ArrowRightIcon(props: SVGProps<SVGSVGElement>) {
   )
 }
 
+export function ChevronLeftIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 20 20"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M12.5 5l-5 5 5 5" />
+    </svg>
+  )
+}
+
+export function ChevronRightIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 20 20"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M7.5 5l5 5-5 5" />
+    </svg>
+  )
+}
+
 export function CheckIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg

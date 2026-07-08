@@ -10,6 +10,7 @@ import { LinkButton } from '@/components/ui/Button'
 import { Squiggle } from '@/components/ui/Squiggle'
 import { SectionHeading } from '@/components/sections/SectionHeading'
 import { PlanCard, type Plan } from '@/components/sections/PlanCard'
+import { PlansCarousel } from '@/components/sections/PlansCarousel'
 import { Faq, type FaqItem } from '@/components/sections/Faq'
 import { CoverageChecker } from '@/components/sections/CoverageChecker'
 import { CtaBand } from '@/components/sections/CtaBand'
@@ -17,8 +18,7 @@ import { JsonLd } from '@/components/seo/JsonLd'
 import { CheckIcon, ArrowRightIcon } from '@/components/ui/icons'
 
 export const metadata: Metadata = buildMetadata({
-  title:
-    'Maxis Home Fibre in Selangor | Plans from RM89/mth + Free iPad Offer',
+  title: 'Maxis Home Fibre | Plans from RM89/mth + Free iPad Offer',
   description: site.description,
   path: '/',
 })
@@ -186,7 +186,7 @@ export default function HomePage() {
           <div className="grid items-center gap-xl lg:grid-cols-2">
             <div>
               <span className="inline-flex items-center gap-sm rounded-pill bg-accent px-md py-xs text-xs font-bold uppercase tracking-wide text-on-accent">
-                Maxis Home Fibre · {site.address.locality} &amp; PJ
+                Maxis Home Fibre · from RM89/mth
               </span>
               <h1 className="mt-lg text-4xl font-extrabold leading-[1.05] tracking-tight text-on-inverse sm:text-5xl lg:text-6xl">
                 Superfast Home Fibre —{' '}
@@ -363,27 +363,41 @@ export default function HomePage() {
             title="Choose your speed"
             description="New sign-up prices — the usual price struck through. Not sure which speed? Tell us how many people and devices are online at once and we'll recommend one."
           />
-          <div className="mt-xl grid gap-lg sm:grid-cols-2 lg:grid-cols-3">
-            {plans.map((plan) => (
-              <PlanCard key={plan.name} plan={plan} />
-            ))}
-            <div className="flex flex-col justify-center rounded-card border border-dashed border-maxis-green bg-surface p-lg sm:p-xl">
-              <h3 className="text-xl font-bold text-on-surface">
-                Already on Maxis postpaid?
-              </h3>
-              <p className="mt-sm text-sm text-on-surface-variant">
-                Existing Maxis postpaid customers can unlock lower converged
-                bundle prices on Home Fibre. Tell us your plan and we&rsquo;ll
-                work out your best deal.
-              </p>
-              <WhatsAppButton
-                message="Hi, I'm an existing Maxis postpaid customer — what converged Home Fibre price can I get?"
-                size="lg"
-                className="mt-lg w-full"
+          {/* Horizontal carousel with < > controls (see PlansCarousel) */}
+          <div className="mt-xl">
+            <PlansCarousel>
+              {plans.map((plan) => (
+                <div
+                  key={plan.name}
+                  data-card
+                  className="w-[76%] shrink-0 snap-start sm:w-[43%] lg:w-[29%]"
+                >
+                  <PlanCard plan={plan} />
+                </div>
+              ))}
+              <div
+                data-card
+                className="w-[76%] shrink-0 snap-start sm:w-[43%] lg:w-[29%]"
               >
-                Get my bundle price
-              </WhatsAppButton>
-            </div>
+                <div className="flex h-full flex-col justify-center rounded-card border border-dashed border-maxis-green bg-surface p-lg transition-shadow hover:shadow-lg sm:p-xl">
+                  <h3 className="text-xl font-bold text-on-surface">
+                    Already on Maxis postpaid?
+                  </h3>
+                  <p className="mt-sm text-sm text-on-surface-variant">
+                    Existing Maxis postpaid customers can unlock lower converged
+                    bundle prices on Home Fibre. Tell us your plan and we&rsquo;ll
+                    work out your best deal.
+                  </p>
+                  <WhatsAppButton
+                    message="Hi, I'm an existing Maxis postpaid customer — what converged Home Fibre price can I get?"
+                    size="lg"
+                    className="mt-lg w-full"
+                  >
+                    Get my bundle price
+                  </WhatsAppButton>
+                </div>
+              </div>
+            </PlansCarousel>
           </div>
           <p className="mt-lg text-sm text-on-surface-faint">
             Prices shown are current new-sign-up offers and are a guide only —
@@ -406,7 +420,7 @@ export default function HomePage() {
             {included.map((item) => (
               <div
                 key={item.title}
-                className="rounded-card border border-outline-variant bg-surface p-lg"
+                className="rounded-card border border-outline-variant bg-surface p-lg transition-shadow hover:shadow-md"
               >
                 <div className="mb-md h-1.5 w-10 rounded-pill bg-accent" />
                 <h3 className="text-base font-bold text-on-surface">
@@ -474,7 +488,7 @@ export default function HomePage() {
             ].map((r) => (
               <div
                 key={r.title}
-                className="rounded-card border border-outline-variant bg-surface p-lg"
+                className="rounded-card border border-outline-variant bg-surface p-lg transition-shadow hover:shadow-md"
               >
                 <div className="mb-md h-1.5 w-10 rounded-pill bg-accent" />
                 <h3 className="text-base font-bold text-on-surface">
