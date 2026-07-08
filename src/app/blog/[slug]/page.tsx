@@ -45,13 +45,13 @@ function Block({ block }: { block: PostBlock }) {
   switch (block.type) {
     case 'h2':
       return (
-        <h2 className="mt-2xl text-2xl font-bold tracking-tight text-on-surface">
+        <h2 className="mt-2xl text-xl font-bold tracking-tight text-on-surface sm:text-2xl">
           {block.text}
         </h2>
       )
     case 'p':
       return (
-        <p className="mt-md text-lg leading-relaxed text-on-surface-variant">
+        <p className="mt-md text-base leading-relaxed text-on-surface-variant sm:text-lg">
           {block.text}
         </p>
       )
@@ -59,7 +59,7 @@ function Block({ block }: { block: PostBlock }) {
       return (
         <ul className="mt-md space-y-sm">
           {block.items.map((item) => (
-            <li key={item} className="flex items-start gap-sm text-lg text-on-surface-variant">
+            <li key={item} className="flex items-start gap-sm text-base text-on-surface-variant sm:text-lg">
               <CheckIcon className="mt-1.5 h-5 w-5 shrink-0 text-maxis-green-strong" />
               <span>{item}</span>
             </li>
@@ -121,7 +121,7 @@ export default async function BlogPostPage({ params }: Params) {
               <p className="text-sm font-semibold uppercase tracking-wide text-maxis-green-strong">
                 {post.category}
               </p>
-              <h1 className="mt-sm text-4xl font-extrabold leading-tight tracking-tight text-on-surface sm:text-5xl">
+              <h1 className="mt-sm text-3xl font-extrabold leading-tight tracking-tight text-on-surface sm:text-5xl">
                 {post.title}
               </h1>
               <p className="mt-md text-sm text-on-surface-faint">

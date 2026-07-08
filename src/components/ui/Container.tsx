@@ -8,7 +8,7 @@ interface ContainerProps {
 /** Centered page-width wrapper with responsive gutters. */
 export function Container({ children, className = '' }: ContainerProps) {
   return (
-    <div className={`mx-auto w-full max-w-6xl px-md sm:px-lg ${className}`}>
+    <div className={`mx-auto w-full max-w-6xl px-lg sm:px-xl ${className}`}>
       {children}
     </div>
   )

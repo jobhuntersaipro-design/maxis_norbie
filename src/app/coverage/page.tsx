@@ -52,10 +52,10 @@ export default function CoveragePage() {
               <p className="text-sm font-bold uppercase tracking-wide text-on-accent/80">
                 Coverage
               </p>
-              <h1 className="mt-sm text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">
+              <h1 className="mt-sm text-3xl font-extrabold leading-tight tracking-tight sm:text-5xl">
                 Is Maxis Home Fibre available at your address?
               </h1>
-              <p className="mt-md max-w-measure-sm text-lg text-on-accent/90">
+              <p className="mt-md max-w-measure-sm text-base text-on-accent/90 sm:text-lg">
                 Fibre availability varies street by street. Pop in your details
                 and we&rsquo;ll confirm coverage — then send back the best plan
                 you can get.

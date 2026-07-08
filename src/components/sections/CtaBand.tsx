@@ -29,10 +29,10 @@ export function CtaBand({
             className="pointer-events-none absolute -bottom-10 -left-10 h-40 w-40 opacity-10"
           />
           <div className="relative mx-auto max-w-measure">
-            <h2 className="text-3xl font-extrabold tracking-tight text-on-inverse sm:text-4xl">
+            <h2 className="text-2xl font-extrabold tracking-tight text-on-inverse sm:text-4xl">
               {title}
             </h2>
-            <p className="mx-auto mt-md max-w-measure-sm text-lg text-on-inverse-variant">
+            <p className="mx-auto mt-md max-w-measure-sm text-base text-on-inverse-variant sm:text-lg">
               {description}
             </p>
             <div className="mt-xl flex justify-center">

@@ -35,7 +35,7 @@ export function PlanCard({ plan }: { plan: Plan }) {
       <p className="mt-sm text-sm text-on-surface-variant">{plan.blurb}</p>
 
       <p className="mt-lg flex items-baseline gap-xs">
-        <span className="text-4xl font-extrabold tracking-tight text-on-surface">
+        <span className="text-3xl font-extrabold tracking-tight text-on-surface sm:text-4xl">
           {plan.price}
         </span>
         {plan.period && (

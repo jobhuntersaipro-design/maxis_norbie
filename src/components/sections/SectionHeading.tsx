@@ -23,11 +23,11 @@ export function SectionHeading({
           {eyebrow}
         </p>
       )}
-      <Tag className="text-3xl font-extrabold tracking-tight text-on-surface sm:text-4xl">
+      <Tag className="text-2xl font-extrabold tracking-tight text-on-surface sm:text-4xl">
         {title}
       </Tag>
       {description && (
-        <p className="mt-md text-lg leading-relaxed text-on-surface-variant">
+        <p className="mt-md text-base leading-relaxed text-on-surface-variant sm:text-lg">
           {description}
         </p>
       )}

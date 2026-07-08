@@ -33,6 +33,14 @@ Build the initial Maxis Authorized Reseller marketing website (v1) per
 
 > Sorted from latest to earliest.
 
+- 2026-07-08 (mobile polish) — Carousel + mobile refinements:
+  - Plans carousel: added **dot indicators**, fixed clipped badges (more track
+    padding), **page-based scrolling** capped at 3 pages (dots: 2 desktop /
+    3 mobile) so it's ≤3 scrolls; removed edge-bleed.
+  - **Smaller mobile fonts** (responsive: headings text-3xl/2xl on mobile →
+    larger from `sm`; body text-base → text-lg from `sm`).
+  - **More horizontal padding** on mobile (`Container` px-lg → px-xl from `sm`).
+
 - 2026-07-08 (later) — Content + UX pass:
   - Added iPad promo image (`/public/promo/ipad.webp`) to hero teaser + RM1 offer.
   - Removed **all area mentions** (Putra Heights / PJ / Selangor) from copy,

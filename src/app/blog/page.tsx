@@ -36,10 +36,10 @@ export default function BlogIndexPage() {
             <p className="text-sm font-semibold uppercase tracking-wide text-maxis-green-strong">
               Guides
             </p>
-            <h1 className="mt-sm text-4xl font-extrabold leading-tight tracking-tight text-on-surface sm:text-5xl">
+            <h1 className="mt-sm text-3xl font-extrabold leading-tight tracking-tight text-on-surface sm:text-5xl">
               Home internet, made simple
             </h1>
-            <p className="mt-md text-lg text-on-surface-variant">
+            <p className="mt-md text-base text-on-surface-variant sm:text-lg">
               Practical tips to get faster, more reliable WiFi at home — and how
               to choose the right Home Fibre plan.
             </p>

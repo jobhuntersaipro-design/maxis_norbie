@@ -188,11 +188,11 @@ export default function HomePage() {
               <span className="inline-flex items-center gap-sm rounded-pill bg-accent px-md py-xs text-xs font-bold uppercase tracking-wide text-on-accent">
                 Maxis Home Fibre · from RM89/mth
               </span>
-              <h1 className="mt-lg text-4xl font-extrabold leading-[1.05] tracking-tight text-on-inverse sm:text-5xl lg:text-6xl">
+              <h1 className="mt-lg text-3xl font-extrabold leading-[1.08] tracking-tight text-on-inverse sm:text-5xl lg:text-6xl">
                 Superfast Home Fibre —{' '}
                 <span className="text-accent">sorted over WhatsApp.</span>
               </h1>
-              <p className="mt-lg max-w-measure-sm text-lg text-on-inverse-variant">
+              <p className="mt-lg max-w-measure-sm text-base text-on-inverse-variant sm:text-lg">
                 Unlimited Maxis Home Fibre from RM89/mth, with a free WiFi 6
                 router and free installation.
               </p>
@@ -240,7 +240,7 @@ export default function HomePage() {
                     <span className="inline-flex rounded-pill bg-accent px-md py-xs text-xs font-bold uppercase tracking-wide text-on-accent">
                       Limited-time offer
                     </span>
-                    <p className="mt-md text-2xl font-extrabold leading-tight text-on-surface sm:text-3xl">
+                    <p className="mt-md text-xl font-extrabold leading-tight text-on-surface sm:text-3xl">
                       300Mbps fibre + an Apple iPad for{' '}
                       <span className="text-maxis-green-strong">RM1/mth</span>
                     </p>
@@ -276,10 +276,10 @@ export default function HomePage() {
                 <span className="inline-flex rounded-pill bg-accent px-md py-xs text-xs font-bold uppercase tracking-wide text-on-accent">
                   Switch &amp; save
                 </span>
-                <h2 className="mt-md text-3xl font-extrabold tracking-tight text-on-surface sm:text-4xl">
+                <h2 className="mt-md text-2xl font-extrabold tracking-tight text-on-surface sm:text-4xl">
                   Get an Apple iPad for RM1/mth
                 </h2>
-                <p className="mt-md text-lg text-on-surface-variant">
+                <p className="mt-md text-base text-on-surface-variant sm:text-lg">
                   Sign up for Maxis Home Fibre 300Mbps (36-month) at RM139/mth as
                   a switchover customer and take home an{' '}
                   <strong className="text-on-surface">
@@ -333,7 +333,7 @@ export default function HomePage() {
                     className="h-40 w-auto drop-shadow-lg"
                   />
                   <div className="text-left">
-                    <p className="text-5xl font-extrabold leading-none tracking-tight text-accent">
+                    <p className="text-4xl font-extrabold leading-none tracking-tight text-accent sm:text-5xl">
                       RM1
                     </p>
                     <p className="mt-xs text-sm text-on-inverse-variant">
@@ -450,10 +450,10 @@ export default function HomePage() {
               <p className="text-sm font-bold uppercase tracking-wide text-on-accent/80">
                 Coverage
               </p>
-              <h2 className="mt-sm text-3xl font-extrabold tracking-tight sm:text-4xl">
+              <h2 className="mt-sm text-2xl font-extrabold tracking-tight sm:text-4xl">
                 Is fibre available at your place?
               </h2>
-              <p className="mt-md max-w-measure-sm text-lg text-on-accent/90">
+              <p className="mt-md max-w-measure-sm text-base text-on-accent/90 sm:text-lg">
                 Pop in your address — we&rsquo;ll check Maxis Home Fibre coverage
                 and send back your best plan.
               </p>
