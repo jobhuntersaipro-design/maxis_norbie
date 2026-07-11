@@ -19,7 +19,7 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `Maxis Home Fibre | Plans from RM89/mth + Free iPad Offer | ${site.brandName}`,
+    default: `Maxis Home Fibre | Plans from RM89/mth | ${site.brandName}`,
     template: `%s | ${site.brandName}`,
   },
   description: site.description,
@@ -29,7 +29,6 @@ export const metadata: Metadata = {
     'Maxis fibre plan',
     'Maxis Home Fibre 300Mbps',
     'Maxis fibre RM99',
-    'Maxis fibre iPad promo',
     'home broadband Malaysia',
     'unlimited fibre internet',
     'switch to Maxis fibre',

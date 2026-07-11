@@ -6,6 +6,223 @@ import type { Post } from '@/types/post'
  */
 export const posts: Post[] = [
   {
+    slug: 'best-internet-for-home-malaysia',
+    image: '/blog/best-internet-for-home-malaysia.jpg',
+    title: 'Internet for Home: How to Choose the Right Plan in Malaysia (2026)',
+    excerpt:
+      'Looking for internet for your home? This guide covers everything — fibre vs wireless, what speed to pick, what a fair price looks like and the mistakes to avoid.',
+    date: '2026-07-11',
+    readMins: 7,
+    category: 'Choosing a plan',
+    seoTitle: 'Internet for Home in Malaysia: How to Choose the Best Plan (2026)',
+    seoDescription:
+      'Complete 2026 guide to home internet in Malaysia — fibre vs wireless, what speed your household needs, fair pricing from RM89/mth, and how to check coverage at your address.',
+    keywords: [
+      'internet for home',
+      'home internet Malaysia',
+      'best home internet',
+      'home broadband plan',
+      'home wifi plan Malaysia',
+      'internet plan for house',
+    ],
+    blocks: [
+      {
+        type: 'p',
+        text: 'Shopping for internet for your home shouldn’t need a telecoms degree. Yet between fibre and wireless, five different speeds and prices that change depending on your street, it’s easy to overpay — or worse, sign a 24-month contract for a plan that can’t keep up. This guide walks you through the four decisions that actually matter, in order.',
+      },
+      { type: 'h2', text: 'Step 1: Check what’s available at your address' },
+      {
+        type: 'p',
+        text: 'Home internet in Malaysia is address-specific. Two houses on the same street can have different fibre infrastructure, different maximum speeds and different promo prices. So before comparing plans, confirm what your address actually supports — it takes a minute over WhatsApp and saves hours of comparison shopping for plans you can’t get.',
+      },
+      { type: 'h2', text: 'Step 2: Choose fibre if you can get it' },
+      {
+        type: 'p',
+        text: 'Fixed fibre delivers a dedicated line into your home, so speeds stay stable at peak hours, during storms and no matter how many neighbours are online. Wireless home internet (4G/5G routers) is quicker to set up, but speeds swing with signal strength and network congestion. If fibre is available at your address, it’s almost always the better home internet — see our full [Home Fibre vs Home 5G WiFi comparison](/blog/home-fibre-vs-home-wifi) for the details.',
+      },
+      {
+        type: 'tip',
+        text: 'Renting, or fibre not installed in your area yet? Wireless home WiFi is a solid stop-gap — you can switch to fibre later when your address is covered.',
+      },
+      { type: 'h2', text: 'Step 3: Match the speed to your household' },
+      {
+        type: 'ul',
+        items: [
+          '1–2 people, browsing and HD streaming: 100Mbps is comfortable',
+          '3–5 people, 4K streaming and work-from-home video calls: 300Mbps is the sweet spot',
+          'Big family with gaming, CCTV and 15+ smart devices: 500Mbps gives real headroom',
+          'Content creators, serious gamers and smart homes: 1Gbps–2Gbps future-proofs everything',
+        ],
+      },
+      {
+        type: 'p',
+        text: 'The most common mistake is buying on price alone and ending up under-speeds. The second most common is paying for 1Gbps when the household only ever uses a fraction of it. Count the people and devices online at your busiest hour — that’s your real requirement.',
+      },
+      { type: 'h2', text: 'Step 4: Know what a fair price looks like' },
+      {
+        type: 'p',
+        text: 'As a benchmark, [current Maxis Home Fibre plans](/#plans) start from RM89/mth for 100Mbps, RM99/mth for 300Mbps, and RM149/mth for 500Mbps with 3 months free — all with unlimited data, a free WiFi 6 router and free installation. If a plan you’re considering charges more for less, or adds installation and router fees on top, keep looking.',
+      },
+      { type: 'h2', text: 'Don’t forget the things that aren’t on the price tag' },
+      {
+        type: 'ul',
+        items: [
+          'Unlimited data — a “fast” plan with a quota isn’t a home plan',
+          'Router quality — a WiFi 6 router included free beats paying extra for a basic one',
+          'Contract length — know whether you’re committing to 24 or 36 months',
+          'Real support — a human you can message beats a call-centre queue',
+        ],
+      },
+      { type: 'h2', text: 'Get your home internet sorted in one chat' },
+      {
+        type: 'p',
+        text: 'Send us your address on WhatsApp or use our [coverage checker](/coverage), and we’ll confirm Maxis Home Fibre availability, the best current price you qualify for and the right speed for your household — no obligation. Most customers go from first message to confirmed installation booking in a single conversation.',
+      },
+    ],
+  },
+  {
+    slug: 'how-to-get-faster-wifi-speed-at-home',
+    image: '/blog/how-to-get-faster-wifi-speed-at-home.jpg',
+    title: 'Fast WiFi Speed at Home: What You Need & How to Get It',
+    excerpt:
+      'Want faster WiFi? Here’s what internet speed you actually need for streaming, gaming and WFH — plus the router and setup tweaks that unlock your line’s full speed.',
+    date: '2026-07-09',
+    readMins: 6,
+    category: 'Fix your internet',
+    seoTitle: 'Fast WiFi Speed at Home: What Speed You Need & How to Get It',
+    seoDescription:
+      'How much internet speed do you need for 4K streaming, gaming and video calls? See the numbers, plus 5 proven ways to get faster WiFi speed at home in Malaysia.',
+    keywords: [
+      'fast wifi speed',
+      'wifi fast speed',
+      'faster wifi at home',
+      'what internet speed do i need',
+      'internet speed for streaming',
+      'high speed home wifi',
+    ],
+    blocks: [
+      {
+        type: 'p',
+        text: 'Fast WiFi isn’t one number — it’s two things working together: a line fast enough for everything your household does at once, and a WiFi setup that actually delivers that speed to every device. Here’s how much speed common activities really use, and how to make sure you’re getting what you pay for.',
+      },
+      { type: 'h2', text: 'How much speed does each activity need?' },
+      {
+        type: 'ul',
+        items: [
+          'Web browsing and social media: 5–10Mbps per person',
+          'HD video streaming: 5–8Mbps per stream',
+          '4K video streaming: 25Mbps per stream',
+          'Video calls (Zoom, Teams, Meet): 5–10Mbps per call',
+          'Online gaming: 10–25Mbps — but low ping matters more than raw speed',
+          'Large downloads and cloud backups: the more, the faster they finish',
+        ],
+      },
+      {
+        type: 'p',
+        text: 'The trick is that these stack. Two 4K streams, a video call and a game running at once already needs 70–90Mbps of real, sustained throughput — and WiFi overhead means your line should have comfortable headroom above that. That’s why 300Mbps has become the sweet spot for busy Malaysian homes, and why 500Mbps is worth it for big households.',
+      },
+      { type: 'h2', text: '1. Upgrade your router before anything else' },
+      {
+        type: 'p',
+        text: 'An old router is the number-one thing throttling fast lines. A modern WiFi 6 router handles more devices simultaneously, pushes stronger signal through walls and gets much closer to your plan’s full speed. Every Maxis Home Fibre plan includes one free.',
+      },
+      { type: 'h2', text: '2. Use 5GHz near the router, and cable what matters' },
+      {
+        type: 'p',
+        text: 'Connect TVs, consoles and desktop PCs to the 5GHz band — or better, an Ethernet cable — and leave 2.4GHz for far-away and low-priority devices. A wired connection gives gaming and work calls the most stable speed and lowest ping possible.',
+      },
+      { type: 'h2', text: '3. Fix coverage before blaming speed' },
+      {
+        type: 'p',
+        text: 'Run a speed test next to the router, then in your slowest room. If speed collapses with distance, your problem is WiFi coverage, not the line — and a mesh WiFi setup will do more for you than a faster plan. Our guide to [fixing weak WiFi in some rooms](/blog/wifi-coverage-weak-in-some-rooms) covers this step by step.',
+      },
+      {
+        type: 'tip',
+        text: 'Test with the right tool: a phone on WiFi tops out below your plan speed on higher tiers. For 500Mbps and above, test on a laptop over Ethernet or a WiFi 6 device to see the real number.',
+      },
+      { type: 'h2', text: '4. Trim the background bandwidth thieves' },
+      {
+        type: 'p',
+        text: 'Cloud photo backups, game updates and 4K CCTV uploads quietly eat your bandwidth all day. Schedule big updates overnight and cap backup speeds, and your “slow” WiFi often speeds up instantly.',
+      },
+      { type: 'h2', text: '5. If the line itself is the limit, upgrade it' },
+      {
+        type: 'p',
+        text: 'If your setup is right and speeds still can’t keep up at your busiest hour, the plan is the bottleneck. [Maxis Home Fibre plans](/#plans) go from 100Mbps all the way to 2Gbps — 300Mbps from RM99/mth and 500Mbps at RM149/mth with 3 months free, both with a free WiFi 6 router. WhatsApp us and we’ll match a speed to how your home actually uses the internet.',
+      },
+    ],
+  },
+  {
+    slug: 'best-value-home-internet-package-malaysia',
+    image: '/blog/best-value-home-internet-package-malaysia.jpg',
+    title: 'The Most Value Home Internet Package in Malaysia (2026 Compared)',
+    excerpt:
+      'Which home internet package gives you the most for your ringgit? We compare price per Mbps, freebies and contract terms to find the best value plans in 2026.',
+    date: '2026-07-07',
+    readMins: 6,
+    category: 'Choosing a plan',
+    seoTitle: 'Best Value Home Internet Package Malaysia 2026: Full Comparison',
+    seoDescription:
+      'Comparing home internet packages in Malaysia? See which plans give the most value per ringgit in 2026 — price per Mbps, free routers, free months and contract terms.',
+    keywords: [
+      'most value home internet package',
+      'best value internet plan Malaysia',
+      'cheap home internet Malaysia',
+      'home internet package price',
+      'best internet package for home',
+      'affordable fibre plan',
+    ],
+    blocks: [
+      {
+        type: 'p',
+        text: 'The cheapest home internet package and the best-value one are rarely the same plan. Value is what you get for each ringgit — speed, data, hardware, free months and flexibility. Here’s a simple framework for judging any home internet package, with real numbers from current Maxis Home Fibre pricing.',
+      },
+      { type: 'h2', text: 'The quickest value test: price per Mbps' },
+      {
+        type: 'p',
+        text: 'Divide the monthly price by the speed. On [current Maxis Home Fibre pricing](/#plans), 100Mbps at RM89 works out to about 89 sen per Mbps. 300Mbps at RM99 drops that to 33 sen. 500Mbps at RM149 is 30 sen, and 1Gbps at RM249 is under 25 sen. The pattern is clear: mid and higher tiers deliver several times more speed for each ringgit.',
+      },
+      {
+        type: 'tip',
+        text: 'Notice the jump from RM89 to RM99 — for RM10 more a month you triple your speed from 100Mbps to 300Mbps. That RM10 is the best-value upgrade in the entire lineup.',
+      },
+      { type: 'h2', text: 'Count the freebies — they’re real money' },
+      {
+        type: 'ul',
+        items: [
+          'Free WiFi 6 router: worth several hundred ringgit if bought separately',
+          'Free installation: saves the standard technician fee',
+          '3 months free: on a RM149 plan, that’s RM447 back in your pocket',
+          'Unlimited data: no top-ups, no throttling after a quota',
+        ],
+      },
+      {
+        type: 'p',
+        text: 'A package that looks RM5 cheaper but charges for the router and installation can cost you more in year one than a slightly pricier plan with everything included. Always compare the total first-year cost, not just the monthly price.',
+      },
+      { type: 'h2', text: 'Factor in the contract length' },
+      {
+        type: 'p',
+        text: 'Promo prices come with contracts — typically 24 or 36 months. A lower price on a 36-month contract is genuine value if you own your home and plan to stay. If you might move, a 24-month plan with free months can be the smarter deal. Maxis currently offers 300Mbps both ways: RM99/mth on 36 months, or RM129/mth on 24 months with 3 months free. Not sure how much speed to buy? Our [guide to choosing internet for your home](/blog/best-internet-for-home-malaysia) walks through it.',
+      },
+      { type: 'h2', text: 'So which package is the most value in 2026?' },
+      {
+        type: 'ul',
+        items: [
+          'Tightest budget: 100Mbps at RM89/mth — full home internet with free router and installation',
+          'Best value overall: 300Mbps at RM99/mth — triple the speed for RM10 more',
+          'Best for big households: 500Mbps at RM149/mth with 3 months free',
+          'Power users: 1Gbps at RM249/mth — the lowest cost per Mbps of the lineup',
+        ],
+      },
+      { type: 'h2', text: 'Get the exact price for your address' },
+      {
+        type: 'p',
+        text: 'Final pricing depends on the fibre infrastructure at your address and whether you’re switching from another provider — sometimes there’s an even better offer than the standard rate. [Check coverage at your address](/coverage) or WhatsApp us, and we’ll confirm the best-value Maxis Home Fibre package you qualify for, with the full cost breakdown before you commit.',
+      },
+    ],
+  },
+  {
     slug: 'why-is-my-internet-slow-at-home',
     image: '/blog/why-is-my-internet-slow-at-home.jpg',
     title: 'Why Is My Internet So Slow at Home? 9 Ways to Fix It',

@@ -2,11 +2,16 @@
 
 import {
   Children,
+  cloneElement,
+  isValidElement,
   useCallback,
   useEffect,
+  useLayoutEffect,
   useRef,
   useState,
+  type MouseEvent as ReactMouseEvent,
   type PointerEvent as ReactPointerEvent,
+  type ReactElement,
   type ReactNode,
 } from 'react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@/components/ui/icons'
@@ -15,8 +20,16 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@/components/ui/icons'
  * Horizontal snap carousel with < > arrows and dot indicators (no scrollbar).
  * Supports native touch swipe plus click-and-drag with a mouse on desktop.
  * Cards are passed as children (each wrapped with data-card + width classes).
+ * `initialCard` starts the carousel scrolled to that card (e.g. the featured
+ * plan) instead of the first one.
  */
-export function PlansCarousel({ children }: { children: ReactNode }) {
+export function PlansCarousel({
+  children,
+  initialCard = 0,
+}: {
+  children: ReactNode
+  initialCard?: number
+}) {
   const count = Children.count(children)
   const trackRef = useRef<HTMLDivElement>(null)
   const [atStart, setAtStart] = useState(true)
@@ -25,6 +38,9 @@ export function PlansCarousel({ children }: { children: ReactNode }) {
   // Number of reachable scroll positions (fewer than cards when several are
   // visible at once) — so we don't render "dead" dots at the end.
   const [pages, setPages] = useState(count)
+  // Index of the card nearest the centre of the view — it gets the highlight
+  // (green border + slight scale via `data-selected` / group-data variants).
+  const [selected, setSelected] = useState(initialCard)
   const [dragging, setDragging] = useState(false)
   const drag = useRef({ active: false, startX: 0, startLeft: 0, moved: false })
 
@@ -49,8 +65,40 @@ export function PlansCarousel({ children }: { children: ReactNode }) {
     setAtStart(el.scrollLeft <= 2)
     setAtEnd(el.scrollLeft >= maxScroll - 2)
     setActive(Math.min(pageCount - 1, Math.round(el.scrollLeft / pageStep)))
+    // Highlight follows whichever card is nearest the centre of the view.
+    const trackRect = el.getBoundingClientRect()
+    let nearest = 0
+    let nearestDist = Infinity
+    el.querySelectorAll<HTMLElement>('[data-card]').forEach((c, i) => {
+      const r = c.getBoundingClientRect()
+      const dist = Math.abs(
+        r.left - trackRect.left + r.width / 2 - el.clientWidth / 2
+      )
+      if (dist < nearestDist) {
+        nearestDist = dist
+        nearest = i
+      }
+    })
+    setSelected(nearest)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [count])
+
+  // Jump (no animation, before paint) so the initial card sits centered in
+  // the view — its neighbours (e.g. 300Mbps on the left, 1Gbps on the right)
+  // show on either side as a hint that the carousel scrolls both ways.
+  useLayoutEffect(() => {
+    const el = trackRef.current
+    const card = el?.querySelectorAll<HTMLElement>('[data-card]')[initialCard]
+    if (el && card && initialCard > 0) {
+      const cardRect = card.getBoundingClientRect()
+      const cardLeft = cardRect.left - el.getBoundingClientRect().left
+      el.scrollLeft = Math.max(
+        0,
+        cardLeft - (el.clientWidth - cardRect.width) / 2
+      )
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   useEffect(() => {
     update()
@@ -94,6 +142,23 @@ export function PlansCarousel({ children }: { children: ReactNode }) {
     }
   }
 
+  // Clicking a card centers it in the view. Links/buttons inside the card
+  // (e.g. the WhatsApp CTA) keep their own behaviour.
+  const onCardClick = (e: ReactMouseEvent<HTMLDivElement>) => {
+    const el = trackRef.current
+    const target = e.target as HTMLElement
+    if (!el || target.closest('a,button')) return
+    const card = target.closest<HTMLElement>('[data-card]')
+    if (!card) return
+    const cardRect = card.getBoundingClientRect()
+    const cardLeft =
+      cardRect.left - el.getBoundingClientRect().left + el.scrollLeft
+    el.scrollTo({
+      left: Math.max(0, cardLeft - (el.clientWidth - cardRect.width) / 2),
+      behavior: 'smooth',
+    })
+  }
+
   return (
     <div className="relative">
       <div className="mb-md flex items-center justify-end gap-sm">
@@ -113,11 +178,18 @@ export function PlansCarousel({ children }: { children: ReactNode }) {
         onPointerUp={endDrag}
         onPointerLeave={endDrag}
         onClickCapture={onClickCapture}
-        className={`flex snap-x snap-mandatory gap-lg overflow-x-auto pb-lg pt-md select-none [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${
+        onClick={onCardClick}
+        className={`flex snap-x snap-mandatory gap-lg overflow-x-auto pb-lg pt-lg select-none [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${
           dragging ? 'cursor-grabbing' : 'cursor-grab'
         }`}
       >
-        {children}
+        {Children.map(children, (child, i) =>
+          isValidElement(child)
+            ? cloneElement(child as ReactElement<Record<string, unknown>>, {
+                'data-selected': i === selected ? 'true' : 'false',
+              })
+            : child
+        )}
       </div>
 
       {/* Dot indicators (one per reachable scroll position) */}

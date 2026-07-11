@@ -9,6 +9,8 @@ export interface Plan {
   rrp?: string
   /** Optional small qualifier under the price, e.g. "36-month contract". */
   note?: string
+  /** Optional promo tag shown as a dark ribbon on the top-right, e.g. "3 months free". */
+  promo?: string
   blurb: string
   features: string[]
   featured?: boolean
@@ -19,16 +21,23 @@ export interface Plan {
 export function PlanCard({ plan }: { plan: Plan }) {
   return (
     <div
-      className={`relative flex h-full flex-col rounded-card border p-lg sm:p-xl ${
-        plan.featured
-          ? 'border-maxis-green bg-surface shadow-lg ring-1 ring-maxis-green'
-          : 'border-outline-variant bg-surface'
-      }`}
+      className="relative flex h-full flex-col rounded-card border border-outline-variant bg-surface p-lg transition-all duration-300 motion-reduce:transition-none sm:p-xl group-data-[selected=true]:scale-[1.02] group-data-[selected=true]:border-maxis-green group-data-[selected=true]:shadow-lg group-data-[selected=true]:ring-1 group-data-[selected=true]:ring-maxis-green motion-reduce:group-data-[selected=true]:scale-100"
     >
-      {plan.badge && (
-        <span className="absolute -top-3 left-lg inline-flex rounded-pill bg-accent px-md py-xs text-xs font-bold uppercase tracking-wide text-on-accent">
-          {plan.badge}
-        </span>
+      {(plan.badge || plan.promo) && (
+        <div className="absolute -top-3 left-lg right-lg flex items-center justify-between gap-sm">
+          {plan.badge ? (
+            <span className="inline-flex whitespace-nowrap rounded-pill bg-accent px-md py-xs text-xs font-bold uppercase tracking-wide text-on-accent">
+              {plan.badge}
+            </span>
+          ) : (
+            <span />
+          )}
+          {plan.promo && (
+            <span className="inline-flex whitespace-nowrap rounded-pill bg-surface-inverse px-md py-xs text-xs font-bold uppercase tracking-wide text-accent shadow-md">
+              {plan.promo}
+            </span>
+          )}
+        </div>
       )}
 
       <h3 className="text-xl font-bold text-on-surface">{plan.name}</h3>
@@ -64,11 +73,13 @@ export function PlanCard({ plan }: { plan: Plan }) {
         ))}
       </ul>
 
+      {/* Outline by default; turns into the solid green pill on the selected
+          card (same group-data mechanism as the card border). */}
       <WhatsAppButton
         message={plan.whatsappMessage}
         size="lg"
-        variant={plan.featured ? 'solid' : 'outline'}
-        className="mt-xl w-full"
+        variant="outline"
+        className="mt-xl w-full group-data-[selected=true]:border-transparent group-data-[selected=true]:bg-accent group-data-[selected=true]:text-on-accent group-data-[selected=true]:shadow-sm group-data-[selected=true]:hover:bg-accent group-data-[selected=true]:hover:brightness-95"
       >
         Get this plan
       </WhatsAppButton>

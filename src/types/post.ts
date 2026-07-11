@@ -1,3 +1,5 @@
+// Text in p / ul / tip blocks supports markdown-style [label](href) links,
+// rendered as internal <Link>s by the blog post page.
 export type PostBlock =
   | { type: 'p'; text: string }
   | { type: 'h2'; text: string }

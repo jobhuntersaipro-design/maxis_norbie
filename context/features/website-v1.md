@@ -48,7 +48,7 @@ exported. Brand-aligned but clearly labelled "Authorized Reseller".
 
 ## Conversion
 
-Every CTA is a real `<a href>` → `waLink(message)` (Sofie, `60164609428`).
+Every CTA is a real `<a href>` → `waLink(message)` (Sofie, `601162838299`).
 
 ## Compliance / risks
 

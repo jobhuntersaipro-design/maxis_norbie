@@ -43,6 +43,26 @@ function formatDate(iso: string): string {
   })
 }
 
+/**
+ * Renders markdown-style [label](href) links inside block text as internal
+ * <Link>s, leaving the rest as plain text.
+ */
+function renderInline(text: string) {
+  return text.split(/(\[[^\]]+\]\([^)]+\))/g).map((part, i) => {
+    const m = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
+    if (!m) return part
+    return (
+      <Link
+        key={i}
+        href={m[2]}
+        className="font-semibold text-maxis-green-strong underline underline-offset-2 hover:text-on-surface"
+      >
+        {m[1]}
+      </Link>
+    )
+  })
+}
+
 function Block({ block }: { block: PostBlock }) {
   switch (block.type) {
     case 'h2':
@@ -54,7 +74,7 @@ function Block({ block }: { block: PostBlock }) {
     case 'p':
       return (
         <p className="mt-md text-base leading-relaxed text-on-surface-variant sm:text-lg">
-          {block.text}
+          {renderInline(block.text)}
         </p>
       )
     case 'ul':
@@ -63,7 +83,7 @@ function Block({ block }: { block: PostBlock }) {
           {block.items.map((item) => (
             <li key={item} className="flex items-start gap-sm text-base text-on-surface-variant sm:text-lg">
               <CheckIcon className="mt-1.5 h-5 w-5 shrink-0 text-maxis-green-strong" />
-              <span>{item}</span>
+              <span>{renderInline(item)}</span>
             </li>
           ))}
         </ul>
@@ -74,7 +94,7 @@ function Block({ block }: { block: PostBlock }) {
           <p className="text-sm font-bold uppercase tracking-wide text-maxis-green-strong">
             Tip
           </p>
-          <p className="mt-xs text-on-surface">{block.text}</p>
+          <p className="mt-xs text-on-surface">{renderInline(block.text)}</p>
         </div>
       )
   }

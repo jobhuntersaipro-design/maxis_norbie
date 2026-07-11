@@ -249,7 +249,7 @@ Applies to every page; device pages are the priority.
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Maxis Authorized Reseller",
-  "telephone": "+60164609428",
+  "telephone": "+601162838299",
   "areaServed": "Selangor, Malaysia",
   "address": {
     "@type": "PostalAddress",
@@ -270,7 +270,7 @@ WhatsApp (Sofie) is the primary and only conversion action.
 
 ```ts
 // src/lib/whatsapp.ts
-const WHATSAPP_NUMBER = '60164609428' // reseller sales number
+const WHATSAPP_NUMBER = '601162838299' // reseller sales number
 
 export function waLink(message: string) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`

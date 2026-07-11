@@ -16,8 +16,8 @@ export const site = {
   // TODO: confirm the real business email before launch.
   email: 'hello@maxisdeals.com.my',
 
-  phoneDisplay: '+60 16-460 9428',
-  phoneE164: '+60164609428',
+  phoneDisplay: '+60 11-6283 8299',
+  phoneE164: '+601162838299',
   hours: 'Mon–Sat, 10am–7pm',
 } as const
 
@@ -25,7 +25,6 @@ export const site = {
 // /blog and /coverage (navigate home, then scroll).
 export const nav = [
   { href: '/#plans', label: 'Plans' },
-  { href: '/#ipad', label: 'iPad Offer' },
   { href: '/coverage', label: 'Coverage' },
   { href: '/blog', label: 'Guides' },
 ] as const
