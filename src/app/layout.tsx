@@ -1,12 +1,15 @@
 import type { Metadata } from 'next'
 import { Manrope } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import { site } from '@/lib/site'
 import { localBusinessLd } from '@/lib/schema'
+import { GOOGLE_ADS_ID } from '@/lib/gtag'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { FloatingWhatsApp } from '@/components/layout/FloatingWhatsApp'
 import { JsonLd } from '@/components/seo/JsonLd'
+import { WhatsAppConversionTracker } from '@/components/seo/WhatsAppConversionTracker'
 
 // Manrope: a clean, modern, humanist-geometric sans — a licensed-free stand-in
 // for Aaux Next (project-overview §1 typographic feel).
@@ -58,6 +61,19 @@ export default function RootLayout({
         </main>
         <FloatingWhatsApp />
         <Footer />
+        <WhatsAppConversionTracker />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GOOGLE_ADS_ID}');
+          `}
+        </Script>
       </body>
     </html>
   )

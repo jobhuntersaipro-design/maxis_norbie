@@ -10,8 +10,8 @@ export const site = {
   description:
     'Superfast Maxis Home Fibre from RM89/mth with a free WiFi 6 router, free installation and unlimited internet. WhatsApp us to check coverage at your address.',
 
-  // Update to the live domain before submitting the sitemap to Search Console.
-  url: 'https://www.maxisdeals.com.my',
+  // Live production domain (Vercel).
+  url: 'https://www.maxis.ad',
 
   // TODO: confirm the real business email before launch.
   email: 'hello@maxisdeals.com.my',
