@@ -1,7 +1,7 @@
-export const GOOGLE_ADS_ID = 'AW-18341727698'
+export const GOOGLE_ADS_ID = 'AW-18345188244'
 
-// Conversion label for the "Contact" action, from the Google Ads event snippet.
-export const CONTACT_CONVERSION_LABEL = '5VkaCJjF79QcENKbgqpE'
+// Conversion label for the "Contact (2)" action, from the Google Ads event snippet.
+export const CONTACT_CONVERSION_LABEL = '-vl3CMCkvdUcEJS31atE'
 
 declare global {
   interface Window {
@@ -15,6 +15,6 @@ export function trackContactConversion(): void {
   window.gtag('event', 'conversion', {
     send_to: `${GOOGLE_ADS_ID}/${CONTACT_CONVERSION_LABEL}`,
     value: 1.0,
-    currency: 'SGD',
+    currency: 'MYR',
   })
 }
